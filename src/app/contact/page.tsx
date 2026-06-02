@@ -3,7 +3,13 @@ import PageHero from "@/components/PageHero";
 import { Section } from "@/components/Section";
 import ContactForm from "@/components/ContactForm";
 import JsonLd from "@/components/JsonLd";
-import { MailIcon, PhoneIcon, ClockIcon, ShieldIcon } from "@/components/Icons";
+import {
+  MailIcon,
+  PhoneIcon,
+  ClockIcon,
+  ShieldIcon,
+  LinkedInIcon,
+} from "@/components/Icons";
 import { breadcrumbSchema } from "@/lib/schema";
 import { howItWorks, site } from "@/lib/site";
 
@@ -75,6 +81,25 @@ export default function ContactPage() {
                   </span>
                   <span className="block break-all text-lg font-semibold text-brand-900">
                     {site.email}
+                  </span>
+                </span>
+              </a>
+
+              <a
+                href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 rounded-2xl border border-brand-100 bg-brand-50 p-5 transition-colors hover:bg-brand-100/60"
+              >
+                <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-brand-600 text-white">
+                  <LinkedInIcon className="h-6 w-6" />
+                </span>
+                <span>
+                  <span className="block text-sm font-medium text-brand-600">
+                    Connect on LinkedIn
+                  </span>
+                  <span className="block text-lg font-semibold text-brand-900">
+                    Joanne Jones
                   </span>
                 </span>
               </a>

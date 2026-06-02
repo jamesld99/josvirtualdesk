@@ -8,6 +8,7 @@ export const site = {
   phoneDisplay: "07734 424370",
   phoneIntl: "+447734424370",
   email: "hello@josvirtualdesk.co.uk",
+  linkedin: "https://www.linkedin.com/in/joanne-jones-b39a5b385/",
   areaServed: "United Kingdom",
   description:
     "Jo's Virtual Desk provides virtual assistant and business support for busy CEOs, founders, small business owners, coaches, consultants and healthcare professionals across the UK. Save time, stay organised and take control of your admin, diary, emails, bookkeeping and business support.",

@@ -12,6 +12,7 @@ export function organizationSchema() {
     telephone: site.phoneIntl,
     email: site.email,
     areaServed: site.areaServed,
+    sameAs: [site.linkedin],
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -35,6 +36,7 @@ export function professionalServiceSchema() {
     description: site.description,
     telephone: site.phoneIntl,
     email: site.email,
+    sameAs: [site.linkedin],
     priceRange: "££",
     areaServed: {
       "@type": "Country",

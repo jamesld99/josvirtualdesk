@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { navItems, services, site } from "@/lib/site";
 import Logo from "./Logo";
+import { LinkedInIcon } from "./Icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -83,6 +84,16 @@ export default function Footer() {
             </li>
             <li className="text-brand-700/80">Serving the {site.areaServed}</li>
           </ul>
+          <a
+            href={site.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-brand-700/80 transition-colors hover:text-brand-900"
+            aria-label="Connect with Jo's Virtual Desk on LinkedIn"
+          >
+            <LinkedInIcon className="h-5 w-5 text-brand-600" />
+            Connect on LinkedIn
+          </a>
           <Link
             href="/contact"
             className="mt-5 inline-flex items-center justify-center rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700"

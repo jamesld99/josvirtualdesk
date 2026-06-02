@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jo's Virtual Desk
 
-## Getting Started
+Modern, responsive, SEO- and AI-search-optimised website for **Jo's Virtual Desk** — a UK virtual assistant and business support service for CEOs, founders, small business owners, coaches, consultants, entrepreneurs and healthcare professionals.
 
-First, run the development server:
+Built with **Next.js (App Router) + TypeScript + Tailwind CSS v4**.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # start the dev server (http://localhost:3000)
+npm run build    # production build
+npm start        # run the production build
+npm run lint     # lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+  app/
+    layout.tsx                       # Root layout, fonts, global metadata, Org + ProfessionalService schema
+    page.tsx                         # Home
+    about/                           # About
+    services/                        # Services overview
+    services/[slug]/                 # Service detail pages (static generated)
+    why-work-with-jos-virtual-desk/  # Why Work With Jo's Virtual Desk
+    faq/                             # FAQ (with FAQ schema)
+    contact/                         # Contact (form + clickable phone)
+    api/contact/route.ts             # Contact form handler
+    sitemap.ts, robots.ts            # SEO files
+    not-found.tsx                    # Custom 404
+  components/                        # Header, Footer, Hero, ServiceCard, CTA, FAQ accordion, ContactForm, etc.
+  lib/
+    site.ts                          # Single source of truth: business info, nav, services, FAQs, copy
+    schema.ts                        # JSON-LD structured data (Organization, ProfessionalService, FAQ, Service, Breadcrumb)
+public/
+  logo.png, hero-banner.png          # Brand assets
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Pages
 
-## Learn More
+Home · About · Services · Virtual Assistant Support · Bookkeeping & Finance Admin · Travel & Diary Management · Healthcare & Practice Support · Why Work With Jo's Virtual Desk · FAQ · Contact
 
-To learn more about Next.js, take a look at the following resources:
+## SEO & AI search
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Semantic HTML with a clear H1/H2/H3 structure
+- Per-page `title` tags, meta descriptions and canonical URLs
+- Open Graph / Twitter card metadata
+- JSON-LD structured data: **Organization**, **ProfessionalService**, **FAQPage**, **Service**, **BreadcrumbList**
+- `sitemap.xml` and `robots.txt`
+- Internal linking between service pages
+- Clean, descriptive URLs
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Configuration
 
-## Deploy on Vercel
+Update business details (phone, email, domain) in [`src/lib/site.ts`](src/lib/site.ts).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The contact form posts to `src/app/api/contact/route.ts`, which currently validates and logs the enquiry. To receive enquiries by email, connect an email provider (e.g. Resend, SendGrid or Nodemailer) inside that route.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Important wording
+
+Healthcare & practice support is **non-clinical only**. Jo's Virtual Desk does not provide medical advice, clinical services or regulated healthcare services.

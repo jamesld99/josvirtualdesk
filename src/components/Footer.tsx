@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { navItems, services, site } from "@/lib/site";
+import Logo from "./Logo";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -9,13 +9,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-1">
           <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt={`${site.name} logo`}
-              width={48}
-              height={48}
-              className="h-12 w-12 rounded-full object-cover"
-            />
+            <Logo className="h-12 w-12" />
             <span className="font-display text-lg font-bold text-brand-800">
               Jo&apos;s Virtual Desk
             </span>

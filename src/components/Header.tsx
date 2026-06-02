@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navItems, site } from "@/lib/site";
+import Logo from "./Logo";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -25,14 +25,7 @@ export default function Header() {
           className="flex items-center gap-3"
           aria-label={`${site.name} home`}
         >
-          <Image
-            src="/logo.png"
-            alt={`${site.name} logo`}
-            width={48}
-            height={48}
-            className="h-11 w-11 rounded-full object-cover"
-            priority
-          />
+          <Logo className="h-11 w-11 drop-shadow-sm" />
           <span className="flex flex-col leading-tight">
             <span className="font-display text-lg font-bold text-brand-800 sm:text-xl">
               Jo&apos;s Virtual Desk

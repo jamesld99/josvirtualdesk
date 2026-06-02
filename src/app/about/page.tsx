@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { Section, SectionHeading } from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
+import Logo from "@/components/Logo";
 import { CheckIcon } from "@/components/Icons";
 import { breadcrumbSchema } from "@/lib/schema";
 import { audiences, site } from "@/lib/site";
@@ -85,14 +85,18 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="order-1 lg:order-2">
-            <div className="overflow-hidden rounded-[2rem] border border-brand-100 bg-brand-50 p-6 shadow-xl shadow-brand-200/40">
-              <Image
-                src="/logo.png"
-                alt="Jo's Virtual Desk logo"
-                width={480}
-                height={480}
-                className="mx-auto h-auto w-full max-w-sm rounded-2xl object-cover"
-              />
+            <div className="relative flex items-center justify-center overflow-hidden rounded-[2rem] border border-brand-100 bg-gradient-to-br from-brand-50 to-lilac/20 p-10 shadow-xl shadow-brand-200/40">
+              <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-lilac/30 blur-2xl" />
+              <div className="pointer-events-none absolute -bottom-12 -left-8 h-44 w-44 rounded-full bg-brand-100/70 blur-2xl" />
+              <div className="relative text-center">
+                <Logo className="mx-auto h-40 w-40 drop-shadow-lg sm:h-52 sm:w-52" />
+                <p className="mt-6 font-display text-2xl font-bold text-brand-800">
+                  Jo&apos;s Virtual Desk
+                </p>
+                <p className="mt-1 text-xs font-medium uppercase tracking-[0.18em] text-brand-400">
+                  {site.tagline}
+                </p>
+              </div>
             </div>
           </div>
         </div>
